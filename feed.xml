@@ -1,35 +1,22 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-03-16T22:36:32+01:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Welcome to my website</title><entry><title type="html">Sparse Matrices - Storage Schemes</title><link href="http://localhost:4000/2019/03/16/sparse-matrices.html" rel="alternate" type="text/html" title="Sparse Matrices - Storage Schemes" /><published>2019-03-16T00:00:00+01:00</published><updated>2019-03-16T00:00:00+01:00</updated><id>http://localhost:4000/2019/03/16/sparse-matrices</id><content type="html" xml:base="http://localhost:4000/2019/03/16/sparse-matrices.html">&lt;p&gt;&lt;strong&gt;Simple definition :&lt;/strong&gt; A matrix which has “most” of its entries = 0 is a sparse matrix . For a formal definition of sparsity, we 
-consider a ratio of zero valued entries and total number of entries .&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-03-30T20:08:20+01:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Welcome to my Website</title><entry><title type="html">Sparse Matrices - Storage Schemes</title><link href="http://localhost:4000/2019/03/16/sparse-matrices.html" rel="alternate" type="text/html" title="Sparse Matrices - Storage Schemes" /><published>2019-03-16T00:00:00+01:00</published><updated>2019-03-16T00:00:00+01:00</updated><id>http://localhost:4000/2019/03/16/sparse-matrices</id><content type="html" xml:base="http://localhost:4000/2019/03/16/sparse-matrices.html">&lt;script type=&quot;text/javascript&quot; async=&quot;&quot; src=&quot;https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML&quot;&gt;
+&lt;/script&gt;
+
+&lt;p&gt;&lt;strong&gt;Simple definition&lt;/strong&gt; : A matrix which has “most” of its entries = 0 is a sparse matrix . For a formal definition of sparsity, we consider a ratio of zero valued entries and total number of entries .&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Example&lt;/strong&gt;&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
-M=
-  \left[ {\begin{array}{cccc}
-   1 &amp; 0 &amp; 0 &amp; 4 \\
-   0 &amp; 0 &amp; 0 &amp; 6 \\
-   0 &amp; 0 &amp; 8 &amp; 8 \\
-   0 &amp; 0 &amp; 0 &amp; 6 \\
-  \end{array} } \right] %]]&gt;&lt;/script&gt;
+&lt;p&gt;M =   &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+\begin{matrix} 1 &amp; 0 &amp; 0 &amp; 1 \\  0 &amp; 0 &amp; 0 &amp; 1 \\
+ 0 &amp; 0 &amp; 1 &amp; 1 \\
+  0 &amp; 0 &amp; 0 &amp; 1  \end{matrix} %]]&gt;&lt;/script&gt;&lt;/p&gt;
 
-&lt;p&gt;Sparsity =  &lt;script type=&quot;math/tex&quot;&gt;\frac{10}{16}&lt;/script&gt; = 0.625&lt;/p&gt;
+&lt;p&gt;Sparsity = &lt;script type=&quot;math/tex&quot;&gt;\frac{10}{16} = 0.625&lt;/script&gt;&lt;/p&gt;
 
 &lt;p&gt;When sparsity is greater than 0.5 , a matrix is called sparse .&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Storage Schemes for Sparse Matrices&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;Let us say we have the following matrix :
-&lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
-M=
-  \left[ {\begin{array}{cccc}
-   1 &amp; 0 &amp; 0 &amp; 4 \\
-   0 &amp; 0 &amp; 0 &amp; 6 \\
-   0 &amp; 0 &amp; 8 &amp; 8 \\
-   0 &amp; 0 &amp; 0 &amp; 6 \\
-  \end{array} } \right] %]]&gt;&lt;/script&gt;&lt;/p&gt;
-
-&lt;p&gt;Usually, we store matrices in “dense” formats, wherein each entry (irrespective of whether it is 0 or non zero) is stored at a location. For the above matrix, there will be 16 units
- of integer memory allocated. But, since only 6 out of the 16 entries are non zero, can we come up with other ways of storing the matrix which requires lesses space?&lt;/p&gt;
+&lt;p&gt;Usually, we store matrices in “dense” formats, wherein each entry (irrespective of whether it is 0 or non zero) is stored at a location. For the above matrix, there will be 16 units of integer memory allocated. But, since only 6 out of the 16 entries are non zero, can we come up with other ways of storing the matrix which requires lesses space?&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Coordinate Format(COO)&lt;/strong&gt;&lt;/p&gt;
 
@@ -43,20 +30,16 @@ M=
 
 &lt;p&gt;V : to store the non zero value at index i,j&lt;/p&gt;
 
-&lt;p&gt;We can either go “row-wise” and save indices and values or we can go column wise.
- Following is an example of going row- wise (starting index is 0 as in C++ and not 1 as in MATLAB) : &lt;br /&gt;
- I:0 0 1 2 2 3 &lt;br /&gt;
- J:0 3 3 2 3 3 &lt;br /&gt;
- V:1 4 6 8 8 6&lt;/p&gt;
+&lt;p&gt;We can either go “row-wise” and save indices and values or we can go column wise. Following is an example of going row- wise (starting index is 0 as in C++ and not 1 as in MATLAB) : &lt;br /&gt;
+I:0 0 1 2 2 3 &lt;br /&gt;
+J:0 3 3 2 3 3 &lt;br /&gt;
+V:1 4 6 8 8 6&lt;/p&gt;
 
-&lt;p&gt;BUT, what do we observe? We end up needing to store 18 number rather than 16 if we would have saved in dense format.
- So, when is it economical to use COO rather than dense format?&lt;/p&gt;
+&lt;p&gt;BUT, what do we observe? We end up needing to store 18 number rather than 16 if we would have saved in dense format. So, when is it economical to use COO rather than dense format?&lt;/p&gt;
 
-&lt;p&gt;Let number of non-zero values be nz and number of zero values b z.
- For each non zero value, we store its coordinates and the value, meaning 3 units of space fr each non zero value.&lt;/p&gt;
+&lt;p&gt;Let number of non-zero values be nz and number of zero values b z. For each non zero value, we store its coordinates and the value, meaning 3 units of space fr each non zero value.&lt;/p&gt;
 
-&lt;p&gt;If r and c are numbe rof rows and columns in the matrix, total number of entries in dense format = r*c .
- If 3nz &amp;lt; rc , then COO format saves us some space.&lt;/p&gt;
+&lt;p&gt;If r and c are numbe rof rows and columns in the matrix, total number of entries in dense format = r*c . If 3nz &amp;lt; rc , then COO format saves us some space.&lt;/p&gt;
 
 &lt;p&gt;Noting , z+nz = rc :&lt;/p&gt;
 
@@ -64,7 +47,7 @@ M=
 
 &lt;p&gt;z&amp;gt;2/3(rc)&lt;/p&gt;
 
-&lt;p&gt;Which means, if the number of zero values entries is greater than 2/3 times total number of entries, we end up saving space using COO format, rather than dense format.&lt;/p&gt;</content><author><name></name></author><summary type="html">Simple definition : A matrix which has “most” of its entries = 0 is a sparse matrix . For a formal definition of sparsity, we consider a ratio of zero valued entries and total number of entries .</summary></entry><entry><title type="html">Hello</title><link href="http://localhost:4000/2019/03/15/hello.html" rel="alternate" type="text/html" title="Hello" /><published>2019-03-15T00:00:00+01:00</published><updated>2019-03-15T00:00:00+01:00</updated><id>http://localhost:4000/2019/03/15/hello</id><content type="html" xml:base="http://localhost:4000/2019/03/15/hello.html">&lt;p&gt;I have just started working on the website, and have no blog posts yet.
-I hope to start working on it after my exams.
-In the meanwhile, here are some 
- &lt;a href=&quot;https://www.reddit.com/r/awww&quot;&gt;cute animals &lt;/a&gt; .&lt;/p&gt;</content><author><name></name></author><summary type="html">I have just started working on the website, and have no blog posts yet. I hope to start working on it after my exams. In the meanwhile, here are some cute animals .</summary></entry></feed>
+&lt;p&gt;Which means, if the number of zero values entries is greater than 2/3 times total number of entries, we end up saving space using COO format, rather than dense format.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Compressed Sparse Row Format (CSR)&lt;/strong&gt;
+Another format is CSR where the V and J arrays are the same as that for COO . The difference is for the “I” array. Rather than storing i coordinates for non zero values, we store the coordinate of the “J” array, where a new row starts.&lt;/p&gt;</content><author><name></name></author><summary type="html"></summary></entry><entry><title type="html">Hello</title><link href="http://localhost:4000/2019/03/15/hello.html" rel="alternate" type="text/html" title="Hello" /><published>2019-03-15T00:00:00+01:00</published><updated>2019-03-15T00:00:00+01:00</updated><id>http://localhost:4000/2019/03/15/hello</id><content type="html" xml:base="http://localhost:4000/2019/03/15/hello.html">&lt;p&gt;I have just started working on the website, and have no blog posts yet. I hope to start working on it after my exams. In the meanwhile, here are some &lt;a href=&quot;https://www.reddit.com/r/awww&quot;&gt;cute animals&lt;/a&gt; .&lt;/p&gt;</content><author><name></name></author><summary type="html">I have just started working on the website, and have no blog posts yet. I hope to start working on it after my exams. In the meanwhile, here are some cute animals .</summary></entry></feed>
