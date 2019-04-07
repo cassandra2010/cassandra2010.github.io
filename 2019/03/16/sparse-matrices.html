@@ -67,7 +67,7 @@
 
 <p>In COO format, rather than storing all entries of a matrix, we instead store only the non zero values and their corresponding indices.</p>
 
-<p>We wprk with 3 arrays :</p>
+<p>We work with 3 arrays :</p>
 
 <p>I : to store the row number of non zero entry</p>
 
@@ -76,9 +76,9 @@
 <p>V : to store the non zero value at index i,j</p>
 
 <p>We can either go “row-wise” and save indices and values or we can go column wise. Following is an example of going row- wise (starting index is 0 as in C++ and not 1 as in MATLAB) : <br />
-I:0 0 1 2 2 3 <br />
-J:0 3 3 2 3 3 <br />
-V:1 4 6 8 8 6</p>
+I : 0, 0, 1, 2, 2, 3 <br />
+J : 0, 3, 3, 2, 3, 3 <br />
+V : 1, 4, 6, 8, 8, 6</p>
 
 <p>BUT, what do we observe? We end up needing to store 18 number rather than 16 if we would have saved in dense format. So, when is it economical to use COO rather than dense format?</p>
 
@@ -86,16 +86,35 @@ V:1 4 6 8 8 6</p>
 
 <p>If r and c are numbe rof rows and columns in the matrix, total number of entries in dense format = r*c . If 3nz &lt; rc , then COO format saves us some space.</p>
 
-<p>Noting , z+nz = rc :</p>
+<p>Noting ,<br />
+<em>z+nz = rc</em> :</p>
 
-<p>3(rc - z) &lt; rc</p>
+<p><em>3(rc - z) &lt; rc</em></p>
 
-<p>z&gt;2/3(rc)</p>
+<p><em>z &gt; 2/3(rc)</em></p>
 
 <p>Which means, if the number of zero values entries is greater than 2/3 times total number of entries, we end up saving space using COO format, rather than dense format.</p>
 
-<p><strong>Compressed Sparse Row Format (CSR)</strong>
-Another format is CSR where the V and J arrays are the same as that for COO . The difference is for the “I” array. Rather than storing i coordinates for non zero values, we store the coordinate of the “J” array, where a new row starts.</p>
+<p><strong>Compressed Sparse Row Format (CSR)</strong></p>
+
+<p>Another format is CSR where the V and J arrays are the same as that for COO . The difference is for the “I” array. Rather than storing i coordinates for non zero values, we store the coordinate of the “J” array, where a new row starts.</p>
+
+<p>For the above mentioned matrix M, we get the following arrays : <br />
+I : 0, 2, 3, 5, 6  <br />
+J : 0, 3, 3, 2, 3, 3  <br />
+V : 1, 1, 1, 1, 1, 1</p>
+
+<p>Note : The last element of the I array will always contain value = number of rows+1 .</p>
+
+<p>In general, if there are <strong>m</strong> number of non zero entries in a nxn matrix, COO format will require 3m space and CSR will require 2m + n+1 space .</p>
+
+<p><strong>Compressed Sparse Column Format</strong></p>
+
+<p>It is the same as CSR format, except the values are read column wise. We save the row number of each non zero entry (in, say, array I), and the an array (say, J) would contain the indices in the array I where a new row starts .</p>
+
+<p>I : 0, 2, 0, 1, 2, 3 <br />
+J : 0, 1, 1, 2, 6 <br />
+V : 1, 1, 1, 1, 1, 1</p>
 
   </div><a class="u-url" href="/2019/03/16/sparse-matrices.html" hidden></a>
 </article>
