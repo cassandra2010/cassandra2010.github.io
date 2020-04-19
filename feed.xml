@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-04-19T17:27:57+02:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Home</title><entry><title type="html">Challenges in obtaining medical data</title><link href="http://localhost:4000/2019/12/08/medical-data-challenges.html" rel="alternate" type="text/html" title="Challenges in obtaining medical data" /><published>2019-12-08T00:00:00+01:00</published><updated>2019-12-08T00:00:00+01:00</updated><id>http://localhost:4000/2019/12/08/medical-data-challenges</id><content type="html" xml:base="http://localhost:4000/2019/12/08/medical-data-challenges.html">&lt;script type=&quot;text/javascript&quot; async=&quot;&quot; src=&quot;https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML&quot;&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-04-19T17:35:14+02:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Home</title><entry><title type="html">Challenges in obtaining medical data</title><link href="http://localhost:4000/2019/12/08/medical-data-challenges.html" rel="alternate" type="text/html" title="Challenges in obtaining medical data" /><published>2019-12-08T00:00:00+01:00</published><updated>2019-12-08T00:00:00+01:00</updated><id>http://localhost:4000/2019/12/08/medical-data-challenges</id><content type="html" xml:base="http://localhost:4000/2019/12/08/medical-data-challenges.html">&lt;script type=&quot;text/javascript&quot; async=&quot;&quot; src=&quot;https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML&quot;&gt;
 &lt;/script&gt;
 
 &lt;p&gt;Machine learning models rely on the training data provided. The algorithms learn from the examples available. 
@@ -340,9 +340,9 @@ isSymm : if A is symmetric, we need not store all non zero values. We can only s
 I was provided the paper &lt;em&gt;Uwe Naumann and Jacques du Toit. Adjoint Algorithmic Differentiation Tool
 Support for Typical Numerical Patterns in Computational Finance. 2014&lt;/em&gt; and I presented the following presentation and report as deliverables.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;/assets/algo_diff_finance_presentation.pdf&quot;&gt;Final Presentation&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;/assets/algo_diff_finance_presentation.pdf&quot;&gt;Final Presentation (Download link for PDF)&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;/assets/algo_diff_finance_report.pdf&quot;&gt;Final Report&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;/assets/algo_diff_finance_report.pdf&quot;&gt;Final Report (Download link for PDF)&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;Note : The course involved writing a review paper. Any code/ computation/ results is that of the authors of the paper.&lt;/p&gt;
 
