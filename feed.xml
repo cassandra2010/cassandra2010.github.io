@@ -1,4 +1,145 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-04-14T18:05:41+02:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Home</title><entry><title type="html">Masters thesis topic introduction</title><link href="http://localhost:4000/2019/11/25/thesis-intro.html" rel="alternate" type="text/html" title="Masters thesis topic introduction" /><published>2019-11-25T00:00:00+01:00</published><updated>2019-11-25T00:00:00+01:00</updated><id>http://localhost:4000/2019/11/25/thesis-intro</id><content type="html" xml:base="http://localhost:4000/2019/11/25/thesis-intro.html">&lt;script type=&quot;text/javascript&quot; async=&quot;&quot; src=&quot;https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML&quot;&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-04-19T16:49:48+02:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Home</title><entry><title type="html">Challenges in obtaining medical data</title><link href="http://localhost:4000/2019/12/08/medical-data-challenges.html" rel="alternate" type="text/html" title="Challenges in obtaining medical data" /><published>2019-12-08T00:00:00+01:00</published><updated>2019-12-08T00:00:00+01:00</updated><id>http://localhost:4000/2019/12/08/medical-data-challenges</id><content type="html" xml:base="http://localhost:4000/2019/12/08/medical-data-challenges.html">&lt;script type=&quot;text/javascript&quot; async=&quot;&quot; src=&quot;https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML&quot;&gt;
+&lt;/script&gt;
+
+&lt;p&gt;Machine learning models rely on the training data provided. The algorithms learn from the examples available. 
+It generally requires a lot of training data to develop models that are reliable and generalisable.
+The following are some of the challenges associated with getting workable data for
+medical projects :&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;span style=&quot;color:blue&quot;&gt;&lt;strong&gt;Unavailability of data&lt;/strong&gt;&lt;/span&gt; : While it is comparatively easier to get training data for some applications of machine learning,
+that is not the case for medical data. As an example, ImageNet &lt;sup&gt;[1]&lt;/sup&gt; , one of the largest available image datasets, which is also the
+basis of image classification benchmarking as a result of the ILSVRC challenges,
+has 14,197,122 available images &lt;sup&gt;[2]&lt;/sup&gt; .
+Similarly, for studying text data, corpus could be generated from Wikipedia,
+Twitter and publicly available news articles and texts. But getting medical
+records of this magnitude is challenging. Gaining access to real world data, including EHR comes with its own set of issues.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;span style=&quot;color:blue&quot;&gt;&lt;strong&gt;Lack of digitization in hospitals&lt;/strong&gt;&lt;/span&gt; : There is a continued push towards making hospitals digital and using electronic health records (EHRs), with the main
+reasons in its favour being :&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;transparency&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;less medical errors due to illegibility or loss of written records&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;convenience to medical professionals with providing real time availability of
+old patient records&lt;sup&gt;[6][5]&lt;/sup&gt;&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;As per the American Hospital Association survey from 2009&lt;sup&gt;[3]&lt;/sup&gt; :&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;On the basis of responses from 63.1% of hospitals surveyed, only 1.5% of U.S.
+hospitals have a comprehensive electronic-records system (i.e., present in all clin-
+ical units), and an additional 7.6% have a basic system (i.e., present in at least
+one clinical unit). Computerized provider-order entry for medications has been
+implemented in only 17% of hospitals. Larger hospitals, those located in urban
+areas, and teaching hospitals were more likely to have electronic-records systems.
+Respondents cited capital requirements and high maintenance costs as the primary barriers to implementation…..&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;The above numbers have significantly improved in the US after the HITECH
+Act, but there are still issues as cited by Colligan et. al. &lt;sup&gt;[4]&lt;/sup&gt; which leave hospitals
+dissatisfied with the EHR adoption and uses.
+It is also to be noted that while USA has been largely successful in increasing
+EHR usage among hospitals, so is not the case for most other countries. Many
+hospitals around the world still do not use EHR extensively and a lot of work
+in hospitals still happens on paper with little or no digitisation, with costs of
+setting up a digital system and amount of time and money needed to be spent in
+training the employees being a major barrier.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;span style=&quot;color:blue&quot;&gt;&lt;strong&gt;Privacy&lt;/strong&gt;&lt;/span&gt; : Even when hospitals do have electronic health data, it cannot be
+made publicly available or handed over to researchers easily. Proper licensing
+systems and guidelines need to be in place. It needs to be anonymised by the
+hospitals to ensure complete anonymity and privacy of patients &lt;sup&gt;[7]&lt;/sup&gt;. HIPAA and
+recently GDPR have put regulations in place regarding handling of personally
+identifiable information which need to be respected, often leading to additional
+layer of complexity before preparing data to be made available outside hospitals.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;span style=&quot;color:blue&quot;&gt;&lt;strong&gt;Challenges in data merging&lt;/strong&gt;&lt;/span&gt; : When comparing and/or merging medical
+data from different sources, we may encounter following issues :&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;span style=&quot;color:green&quot;&gt;&lt;strong&gt;Language differences&lt;/strong&gt;&lt;/span&gt; : If sources of data are from countries/ hospitals
+with different local languages, the terminologies may be different and it
+could take some time and data processing to ensure that correct values are
+being mapped to correct feature names.&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;span style=&quot;color:green&quot;&gt;&lt;strong&gt;Convention differences&lt;/strong&gt; &lt;/span&gt;: As an example, while in one place, it may be
+usual to save body and weight separately, in other case, saving BMI and
+weight may be the norm. Relevant decoupling and variable generation may
+be required.&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;span style=&quot;color:green&quot;&gt;&lt;strong&gt;Differences in physical units&lt;/strong&gt; &lt;/span&gt;: Different hospitals may follow different
+physical units. For instance, while Europe mainly follows the metric system,
+USA follows the United States Customary System (USCS) where in place
+of kilograms, pounds may be used while recording weights for the patients.
+Similarly for temperature, either Celsius or Fahrenheit may be used.&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;span style=&quot;color:green&quot;&gt;&lt;strong&gt;Different standardisations&lt;/strong&gt; &lt;/span&gt;: Even when using standardisation conven-
+tions, a situation may arise that some data could be from an older time, or
+the hospital record system has not yet updated to a more recent standard.
+For instance, MIMIC-III dataset from the USA follows the ICD-9 &lt;sup&gt;[8]&lt;/sup&gt; sys-
+tem, while ICCA database from Uniklinik Aachen follows the ICD-10 sys-
+tem &lt;sup&gt;[10] [9]&lt;/sup&gt;. Even within the same ICD-x system, different revisions may be
+followed, and before continuing with data merging or any modeling, these
+need to be standardised.&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;span style=&quot;color:green&quot;&gt;&lt;strong&gt;Different privacy standards&lt;/strong&gt; &lt;/span&gt;: Different hospitals may come under different privacy laws, meaning some data/features may be intentionally withheld
+from the provided dataset which renders that feature unusable, even if it is
+available in other datasets.&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;span style=&quot;color:blue&quot;&gt;&lt;strong&gt;Bias&lt;/strong&gt;&lt;/span&gt; : Like all scientific studies, one needs to ensure that the data made available to a model is representative of the population over which it will be deployed
+and is not biased. [More on this topic in another post.]&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;References :&lt;/p&gt;
+
+&lt;p&gt;[1] Deng et. al &lt;em&gt;ImageNet: A Large-Scale Hierarchical Image Database. CVPR, 2009&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;[2] &lt;code class=&quot;highlighter-rouge&quot;&gt;http://image-net.org/about-stats&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;[3] Jha et.al &lt;em&gt;Use of Electronic Health Records in U.S. Hospitals, The New England
+Journal of medicine, 2009&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;[4] Colligan et. al. American Medical Association &lt;em&gt;Sources of physician satisfaction
+and dissatisfaction and review of administrative tasks in ambulatory practice: A
+qualitative analysis of physician and staff interviews.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;[5] Linda T. Kohn, Janet M. Corrigan, and Molla S. Donaldson &lt;em&gt;To Err Is Human:
+Building a Safer Health System (1999)&lt;/em&gt;.Committee on Quality of Health Care in
+America, Institute of Medicine, National Academy Press, Washington, D.C.&lt;/p&gt;
+
+&lt;p&gt;[6] HIMSS Electronic Health Record Committee &lt;em&gt;EHR Definition, Attributes and
+Essential Requirements Version 1.0&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;[7] &lt;code class=&quot;highlighter-rouge&quot;&gt;https://www.legislation.gov.au/Details/C2012A00063&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;[8] International Classification of Diseases,Ninth Revision (ICD-9) &lt;code class=&quot;highlighter-rouge&quot;&gt;https://www.cdc.gov/nchs/icd/icd9.htm&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;[9] ICD-10 versions on the WHO website
+&lt;code class=&quot;highlighter-rouge&quot;&gt;https://www.who.int/classifications/icd/icdonlineversions/en/&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;[10] ICD-10 on CDC website &lt;code class=&quot;highlighter-rouge&quot;&gt;https://www.cdc.gov/nchs/icd/icd10cm.htm&lt;/code&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html"></summary></entry><entry><title type="html">Masters thesis topic introduction</title><link href="http://localhost:4000/2019/11/25/thesis-intro.html" rel="alternate" type="text/html" title="Masters thesis topic introduction" /><published>2019-11-25T00:00:00+01:00</published><updated>2019-11-25T00:00:00+01:00</updated><id>http://localhost:4000/2019/11/25/thesis-intro</id><content type="html" xml:base="http://localhost:4000/2019/11/25/thesis-intro.html">&lt;script type=&quot;text/javascript&quot; async=&quot;&quot; src=&quot;https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML&quot;&gt;
 &lt;/script&gt;
 
 &lt;p&gt;&lt;strong&gt;Feature Selection for patient population discrimination&lt;/strong&gt;&lt;/p&gt;
