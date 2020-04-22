@@ -1,4 +1,53 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-04-19T17:53:39+02:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Home</title><entry><title type="html">Challenges in obtaining medical data</title><link href="http://localhost:4000/2019/12/08/medical-data-challenges.html" rel="alternate" type="text/html" title="Challenges in obtaining medical data" /><published>2019-12-08T00:00:00+01:00</published><updated>2019-12-08T00:00:00+01:00</updated><id>http://localhost:4000/2019/12/08/medical-data-challenges</id><content type="html" xml:base="http://localhost:4000/2019/12/08/medical-data-challenges.html">&lt;script type=&quot;text/javascript&quot; async=&quot;&quot; src=&quot;https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML&quot;&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-04-22T12:35:32+02:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Home</title><entry><title type="html">Feature Engineering vs Feature Selection</title><link href="http://localhost:4000/2019/12/20/fe-vs-fs.html" rel="alternate" type="text/html" title="Feature Engineering vs Feature Selection" /><published>2019-12-20T00:00:00+01:00</published><updated>2019-12-20T00:00:00+01:00</updated><id>http://localhost:4000/2019/12/20/fe-vs-fs</id><content type="html" xml:base="http://localhost:4000/2019/12/20/fe-vs-fs.html">&lt;script type=&quot;text/javascript&quot; async=&quot;&quot; src=&quot;https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML&quot;&gt;
+&lt;/script&gt;
+
+&lt;p&gt;&lt;strong&gt;Feature Engineering vs Feature Selection&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Feature Engineering / Feature Extraction&lt;/strong&gt;&lt;/p&gt;
+
+    &lt;p&gt;Feature engineering involves possible changes in the available features. For example, one could want to create non linear 
+features from a feature &lt;em&gt;f&lt;/em&gt; available in the dataset. Other features such as : &lt;em&gt;sin(f), cos(f), tan(f), log(f), e&lt;sup&gt;f&lt;/sup&gt;&lt;/em&gt; etc. could be
+generated from it.&lt;/p&gt;
+
+    &lt;p&gt;Also multiple features can be combined to form new features. For instance :&lt;br /&gt;
+&lt;em&gt;f = f&lt;sub&gt;1&lt;/sub&gt; + f&lt;sub&gt;2&lt;/sub&gt; + f&lt;sub&gt;3&lt;/sub&gt;&lt;/em&gt; &lt;br /&gt;
+&lt;em&gt;f = f&lt;sub&gt;1&lt;/sub&gt; ∗ f&lt;sub&gt;2&lt;/sub&gt;&lt;/em&gt; &lt;br /&gt;&lt;/p&gt;
+
+    &lt;p&gt;Feature extraction approaches project features into a new feature space and the
+&lt;span style=&quot;color:green&quot;&gt; newly constructed features are usually combinations of original features&lt;/span&gt;. Examples of feature extraction techniques include &lt;span style=&quot;color:blue&quot;&gt;Principal Component Analysis (PCA), Linear Discriminant Analysis (LDA) and Canonical Correlation Analysis
+(CCA)&lt;/span&gt; &lt;sup&gt;[1]&lt;/sup&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Feature (subset) Selection&lt;/strong&gt;
+Feature selection refers to finding a subset of the original features of a dataset,
+such that an induction algorithm that is run on data containing only these features generates a classifier with the highest possible accuracy &lt;sup&gt;[2]&lt;/sup&gt; .&lt;/p&gt;
+
+    &lt;p&gt;The selection criterion may not always be based on maximizing accuracy, as is noted by Liu et al. &lt;sup&gt;[3]&lt;/sup&gt; Their definition involves evaluating and comparing candidate subsets according to a certain evaluation criterion, till a given stopping criterion is reached. Then the selected best subset usually needs to be validated
+by prior knowledge or different tests via synthetic and/or real-world data sets &lt;sup&gt;[3]&lt;/sup&gt; .
+Feature selection approaches aim to select a small subset of features that minimize redundancy and maximize relevance to the target such as the class labels
+in classification. Representative feature selection techniques include &lt;span style=&quot;color:blue&quot;&gt;Information
+Gain, Relief, Fisher Score and Lasso&lt;/span&gt; &lt;sup&gt;[1]&lt;/sup&gt; . In feature selection, we &lt;span style=&quot;color:green&quot;&gt;do not combine features, nor do we make new features from an existing set of available features&lt;/span&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;As noted by Aleyani et al. &lt;sup&gt;[4]&lt;/sup&gt; , both approaches are capable of improving learning performance, lowering computational complexity, building better generalizable models
+and decreasing required storage. However, &lt;strong&gt;feature selection is superior in terms of
+better readability and interpretability since it maintains the original feature values
+in the reduced space while feature extraction transforms the data from the original
+space into a new space, which cannot be linked to the features in the original space.Therefore, further analysis of the new space is problematic since there is no physical meaning 
+for the transformed features obtained from feature extraction technique&lt;/strong&gt; &lt;sup&gt;[4]&lt;/sup&gt; .&lt;/p&gt;
+
+&lt;p&gt;References :&lt;/p&gt;
+
+&lt;p&gt;[1] Jiliang Tang, Salem Alelyani and Huan Liu &lt;em&gt;Feature Selection for Classification: A Review&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;[2] Ron Kohavi, George H. John &lt;em&gt;Wrappers for feature subset selection, Artificial Intelligence 97 ( 1997) 273-324&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;[3] Huan Liu and Lei Yu &lt;em&gt;Toward Integrating Feature Selection Algorithms for Classification and Clustering&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;[4] Salem Alelyani, Jiliang Tang and Huan Liu &lt;em&gt;Feature Selection for Clustering: A Review&lt;/em&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html"></summary></entry><entry><title type="html">Challenges in obtaining medical data</title><link href="http://localhost:4000/2019/12/08/medical-data-challenges.html" rel="alternate" type="text/html" title="Challenges in obtaining medical data" /><published>2019-12-08T00:00:00+01:00</published><updated>2019-12-08T00:00:00+01:00</updated><id>http://localhost:4000/2019/12/08/medical-data-challenges</id><content type="html" xml:base="http://localhost:4000/2019/12/08/medical-data-challenges.html">&lt;script type=&quot;text/javascript&quot; async=&quot;&quot; src=&quot;https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML&quot;&gt;
 &lt;/script&gt;
 
 &lt;p&gt;Machine learning models rely on the training data provided. The algorithms learn from the examples available. 
